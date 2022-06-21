@@ -108,7 +108,7 @@ public class User {
 
     /**
     Description: Sets new region
-    @param String newEmail
+    @param String newRegion
     @return void
     */
     public void setRegion(String newRegion){
