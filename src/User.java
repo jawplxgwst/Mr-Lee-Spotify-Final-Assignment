@@ -141,13 +141,11 @@ public class User {
     }
 
     public void changeUsername(String oldUsername, String newUsername) {
-        if (newUsername.!equals(oldUsername)) { // if the usernames are the same
+        if (newUsername.equals(oldUsername)) { // if the usernames are the same
+            System.out.println("Your new username is the same as the last. \nYour username has not been changed.");
+        } else {
             this.username = newUsername;
             System.out.println("Your username has been changed.");
-        } else {
-            System.out.println("Your new username is the same as the last. \nYour username has not been changed.");
         }
     }
 }
-
-
