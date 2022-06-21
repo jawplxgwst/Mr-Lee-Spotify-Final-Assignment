@@ -5,8 +5,17 @@
  * Spotify main
  */
 
+// imported packages
+import java.io.*;
+
 public class Main {
 
+    try {
+        BufferedReader bw = new BufferedReader(new FileReader()) (new FileReader()
 
 
+    } catch(Exception e){
+        return;
+    }
 }
+
