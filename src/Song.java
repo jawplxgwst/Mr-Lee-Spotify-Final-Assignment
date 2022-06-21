@@ -150,4 +150,66 @@ public class Song {
 
         return attributes;
     }
+
+    /**
+     * Name: main
+     * Description: testing methods
+     */
+    public static void main(String[] args) {
+        // constructor
+        // String title, int totalTime, String artist, String album, String genre
+        Song mySong = new Song("Secrets", "Hip-Hop", 260, "Starboy", "The Weeknd");
+
+        // accessors
+        System.out.println();
+        System.out.println("ACCESSORS"); // accessor for each attribute
+
+        System.out.println("Name: " + mySong.getName());
+        System.out.println("Genre: " + mySong.getGenre());
+        System.out.println("Time in seconds: " + mySong.getLength());
+        System.out.println("Album: " + mySong.getAlbum());
+        System.out.println("Artist: " + mySong.getArtist());
+
+        // mutators
+        System.out.println();
+        System.out.println("MUTATORS"); // all mutators for each attribute
+
+        System.out.println("catching if the name is less then 1 character");
+        mySong.setName("");   // invalid
+        System.out.println(mySong.getName());
+        mySong.setName("Chanel"); // valid
+        System.out.println(mySong.getName());
+
+        System.out.println("catching if the genre is less then 1 character");
+        mySong.setGenre("");   // invalid
+        System.out.println(mySong.getGenre());
+        mySong.setGenre("Alternative"); // valid
+        System.out.println(mySong.getGenre());
+
+        System.out.println("catching if the time is negative");
+        mySong.setLength(-1);   // invalid
+        System.out.println(mySong.getLength());
+        mySong.setLength(360); // valid
+        System.out.println(mySong.getLength());
+
+        System.out.println("catching if the album is less then 1 character");
+        mySong.setAlbum("");   // invalid
+        System.out.println(mySong.getAlbum());
+        mySong.setAlbum("Blonde"); // valid
+        System.out.println(mySong.getAlbum());
+
+        System.out.println("catching if the artist is less then 1 character");
+        mySong.setArtist("");   // invalid
+        System.out.println(mySong.getArtist());
+        mySong.setArtist("Frank Ocean"); // valid
+        System.out.println(mySong.getArtist());
+
+        // other methods
+        System.out.println();
+        System.out.println("OTHER METHODS");    // extra method (only 1)
+
+        System.out.println("Demonstrating toString()");
+        System.out.println(mySong.toString()); // output toString
+    }
 }
+
