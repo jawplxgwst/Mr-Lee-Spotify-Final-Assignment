@@ -47,42 +47,43 @@ public class User {
     /**
      * Name: getUsername
      * Description: return the username
-     * @return
+     * @return the username
      */
     public String getUsername() {return this.username;}
 
     /**
      * Name: getPassword
      * Description: return the password
-     * @return
+     * @return the password
      */
     public String getPassword() {return this.password;}
 
     /**
      * Name: getEmail
      * Decription: return the email
-     * @return
+     * @return the email
      */
     public String getEmail() {return this.email;}
 
     /**
      * Name: getRegion
      * Description: return the region
-     * @return
+     * @return the region
      */
     public String getRegion() {return this.region;}
 
    /**
      * Name: getBirthday
      * Description: return the user's brithday
-     * @return
+     * @return the birthday
      */
     public String getBirthday() {return this.birthday;}
+
+    /** mutator methods */
 
     /**
     Description: Sets new username
     @param String newUsername
-    @return void
     */
     public void setUsername(String newUsername){
         this.username = newUsername;      
@@ -91,7 +92,6 @@ public class User {
     /**
     Description: Sets new password
     @param String newPassword
-    @return void
     */
     public void setPassword(String newPassword){
         this.password = newPassword;      
@@ -100,7 +100,6 @@ public class User {
     /**
     Description: Sets new email 
     @param String newEmail
-    @return void
     */
     public void setEmail(String newEmail){
         this.email = newEmail;      
@@ -109,7 +108,6 @@ public class User {
     /**
     Description: Sets new region
     @param String newRegion
-    @return void
     */
     public void setRegion(String newRegion){
         this.region = newRegion;      
