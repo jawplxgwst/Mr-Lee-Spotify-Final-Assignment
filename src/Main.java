@@ -21,7 +21,9 @@ public class Main {
                 //Song mySong = new Song();
                 //Song mySong = new Song("Secrets", "Hip-Hop", 260, "Starboy", "The Weeknd");
             }
-            br.close();
+
+            br.close();         // Close the reader
+
         } catch (Exception e) {
             return;
         }
