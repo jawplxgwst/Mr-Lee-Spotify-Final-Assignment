@@ -86,23 +86,29 @@ public class User {
     @param newUsername
     */
     public void setUsername(String newUsername){
-        this.username = newUsername;      
+        if (newUsername.length() > 0) {
+            this.username = newUsername;
+        }
       }
       
     /**
     Description: Sets new password
     @param newPassword
     */
-    public void setPassword(String newPassword){
-        this.password = newPassword;      
-      }
+    public void setPassword(String newPassword) {
+        if (newPassword.length() > 0) {
+            this.password = newPassword;
+        }
+    }
 
     /**
     Description: Sets new email 
     @param newEmail
     */
     public void setEmail(String newEmail){
-        this.email = newEmail;      
+        if (newEmail.length() > 0) {
+            this.email = newEmail;
+        }
       }
 
     /**
@@ -110,6 +116,8 @@ public class User {
     @param newRegion
     */
     public void setRegion(String newRegion){
-        this.region = newRegion;      
+        if (newRegion.length() > 0) {
+            this.region = newRegion;
+        }
       }
 }
