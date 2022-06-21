@@ -10,12 +10,21 @@ import java.io.*;
 
 public class Main {
 
-    try {
-        BufferedReader bw = new BufferedReader(new FileReader()) (new FileReader()
+    public static void main(String [] args){
 
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\jzwon\\Desktop\\GitHub Projects\\Mr-Lee-Spotify-Final-Assignment\\src\\Music File.txt"));
 
-    } catch(Exception e){
-        return;
+            String songList;
+            while((songList = br.readLine()) != null){
+                System.out.println(songList);
+                //Song mySong = new Song();
+                //Song mySong = new Song("Secrets", "Hip-Hop", 260, "Starboy", "The Weeknd");
+            }
+            br.close();
+        } catch (Exception e) {
+            return;
+        }
     }
 }
 
