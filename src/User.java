@@ -77,7 +77,7 @@ public class User {
      * Description: return the user's brithday
      * @return the birthday
      */
-    public String getBirthday() {return this.birthday;}
+   public String getBirthday() {return this.birthday;}
 
     /* mutators */
 
@@ -89,7 +89,7 @@ public class User {
         if (newUsername.length() > 0) {
             this.username = newUsername;
         }
-      }
+    }
       
     /**
     Description: Sets new password
@@ -109,7 +109,7 @@ public class User {
         if (newEmail.length() > 0) {
             this.email = newEmail;
         }
-      }
+    }
 
     /**
     Description: Sets new region
@@ -119,38 +119,35 @@ public class User {
         if (newRegion.length() > 0) {
             this.region = newRegion;
         }
-      }
+    }
 
-      /**
-       * change password method
-       * @param oldPassword
-       * @param newPassword
-       * @param newPasswordAgain
-       */
-      public void changePassword(String oldPassword, String newPassword, String newPasswordAgain) {
-
+    /**
+     * change password method
+     * @param oldPassword
+     * @param newPassword
+     * @param newPasswordAgain
+     */
+    public void changePassword(String oldPassword, String newPassword, String newPasswordAgain) {
         if (oldPassword.equals(this.password)) { // if entered old password is the same as what the old password actually is
-
-                    if (newPassword.equals(newPasswordAgain)) { // if both new password input is the same
-                        this.password = newPassword;
-                        System.out.println("Your password has been changed.");
-                    } else {
-                        System.out.println("Your new passwords do not match. \nYour password has not been changed.");
-                    }
+            if (newPassword.equals(newPasswordAgain)) { // if both new password input is the same
+                this.password = newPassword;
+                System.out.println("Your password has been changed.");
+            } else {
+                System.out.println("Your new passwords do not match. \nYour password has not been changed.");
+            }
         } else {
             System.out.println("Your new old passwords do not match. \nYour password has not been changed.");
         }
     }
 
-
-      public void changeUsername(String oldUsername, String newUsername) {
-
-                    if (newUsername.!equals(oldUsername)) { // if the usernames are the same
-                        this.username = newUsername;
-                        System.out.println("Your username has been changed.");
-                    } else {
-                        System.out.println("Your new username is the same as the last. \nYour username has not been changed.");
-                    }
+    public void changeUsername(String oldUsername, String newUsername) {
+        if (newUsername.!equals(oldUsername)) { // if the usernames are the same
+            this.username = newUsername;
+            System.out.println("Your username has been changed.");
+        } else {
+            System.out.println("Your new username is the same as the last. \nYour username has not been changed.");
         }
     }
 }
+
+
