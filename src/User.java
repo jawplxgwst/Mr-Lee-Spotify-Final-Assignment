@@ -95,13 +95,6 @@ public class User {
      * @return subscribed
      */
    public boolean getIsSubscribed() {return this.isSubscribed;}
-   
-   /**
-     * Name: getBankBalance
-     * Description: return the user's bank balance
-     * @return the bank balance
-     */
-   public double getBankBalance() {return this.bankBalance;}
 
     /* mutators */
 
