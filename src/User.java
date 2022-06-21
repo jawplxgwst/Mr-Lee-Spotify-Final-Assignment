@@ -141,4 +141,16 @@ public class User {
             System.out.println("Your new old passwords do not match. \nYour password has not been changed.");
         }
     }
+
+
+      public void changeUsername(String oldUsername, String newUsername) {
+
+                    if (newUsername.!equals(oldUsername)) { // if the usernames are the same
+                        this.username = newUsername;
+                        System.out.println("Your username has been changed.");
+                    } else {
+                        System.out.println("Your new username is the same as the last. \nYour username has not been changed.");
+                    }
+        }
+    }
 }
