@@ -1,8 +1,8 @@
 /**
- * @author Chris Park
+ * @author Chris Park, Henry Liu
  * Jun 7, 2022
  * 
- * A user class, contains user's favourite music and subscription details
+ * A user class, contains user's private information and subscription details
  */
 public class User {
  
@@ -22,6 +22,12 @@ public class User {
 
     /** Birthdate of the user */
     private String birthday;
+    
+    /** subscribed or not */
+    private boolean isSubscribed;
+   
+    /** bank account balance */
+    private double bankBalance;
 
     /* constructor */
 
@@ -33,13 +39,17 @@ public class User {
      * @param email
      * @param region
      * @param birthday
+     * @param isSubscribed
+     * @param bankBalance
      */
-    public User(String username, String password, String email, String region, String birthday) {
+    public User(String username, String password, String email, String region, String birthday, boolean isSubscribed, double bankBalance) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.region = region;
         this.birthday = birthday;
+        this.isSubscribed = isSubscribed;
+        this.bankBalance = bankBalance;
     }
 
     /* accessors */
@@ -78,13 +88,27 @@ public class User {
      * @return the birthday
      */
    public String getBirthday() {return this.birthday;}
+   
+   /**
+     * Name: getIsSubscribed
+     * Description: return the user's subscription status
+     * @return subscribed
+     */
+   public String getIsSubscribed() {return this.isSubscribed;}
+   
+   /**
+     * Name: getBankBalance
+     * Description: return the user's bank balance
+     * @return the bank balance
+     */
+   public String getBankBalance() {return this.bankBalance;}
 
     /* mutators */
 
     /**
-    Description: Sets new username
-    @param newUsername
-    */
+     * Description: Sets new username
+     * @param newUsername
+     */
     public void setUsername(String newUsername){
         if (newUsername.length() > 0) {
             this.username = newUsername;
@@ -112,14 +136,47 @@ public class User {
     }
 
     /**
-    Description: Sets new region
-    @param newRegion
-    */
+     * Description: Sets new region
+     * @param newRegion
+     */
     public void setRegion(String newRegion){
         if (newRegion.length() > 0) {
             this.region = newRegion;
         }
     }
+    
+    /**
+     * subscribe method
+     * let's the user subscribe if they have enough money
+     * if they are already subscribed it changes nothing
+     *
+     */
+     public void subscribe() {
+        if (isSubscribed == true) {
+           isSubscribed = true;
+           System.out.println("You are already subscribed");
+        } else if (bankBalance < 9.99) {
+           isSubscribed = false;
+           System.out.println("You do not have enough money to subscribe");
+        } else {
+           bankBalance -= 9.99;
+           isSubscribed = true;
+           System.out.println("You have successfuly subscribed");
+        }
+     }
+     
+    /**
+     * unsubscribe method
+     * let's the user unsubscribe
+     * If user is subscribed they are now unsubscribed, without a refund of course
+     * if user is unsubscribed it changes nothing 
+     *
+     */
+     public void unsubscribe() {
+        isSubscribed = false;
+        System.out.println("You have unsubscribed");
+     }
+     
 
     /** other methods */
 
@@ -155,4 +212,13 @@ public class User {
             System.out.println("Your username has been changed.");
         }
     }
+    
+    /**
+     * Main class
+     * Description: tests the user class
+     */
+    public static void main(String[] args) {
+        
+    }
+    
 }
