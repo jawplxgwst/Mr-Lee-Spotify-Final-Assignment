@@ -94,14 +94,14 @@ public class User {
      * Description: return the user's subscription status
      * @return subscribed
      */
-   public String getIsSubscribed() {return this.isSubscribed;}
+   public boolean getIsSubscribed() {return this.isSubscribed;}
    
    /**
      * Name: getBankBalance
      * Description: return the user's bank balance
      * @return the bank balance
      */
-   public String getBankBalance() {return this.bankBalance;}
+   public double getBankBalance() {return this.bankBalance;}
 
     /* mutators */
 

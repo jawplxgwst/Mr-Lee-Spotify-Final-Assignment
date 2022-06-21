@@ -41,7 +41,7 @@ public class Profile {
   * @param user, user's username
   * @param favGenre1 to favGenre4, user's top 4 music genres
   * @param isSubscribed, whether the user is subscribed or not
-  * @param bank, user's bank account
+  * @param bankBalance, user's bank account
   */
    public Profile(String user, String favGenre1, String favGenre2, String favGenre3, String favGenre4, boolean isSubscribed, double bankBalance) {
       this.user = user;
@@ -544,7 +544,7 @@ public class Profile {
    
       Profile freeUser = new Profile("ChrisP", "pop", "rap", "metal", "classical", false, 0);
       
-      Profile freeUser = new Profile("ChrisP", "pop", "rap", "metal", "classical", false, 0);
+      // Profile freeUser = new Profile("ChrisP", "pop", "rap", "metal", "classical", false, 0);
    
       System.out.println(freeUser.recommend());
       

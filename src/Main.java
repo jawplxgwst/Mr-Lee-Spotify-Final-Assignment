@@ -7,6 +7,7 @@
 
 // imported packages
 import java.io.*;
+import java.util.*;
 
 public class Main {
 
@@ -15,11 +16,14 @@ public class Main {
         try {
             BufferedReader br = new BufferedReader(new FileReader("src\\Music File.txt"));      // create buffered reader to read in file
 
-            String songList;        // variable to hold the song information
+            String songInfo;        // variable to hold the song information
 
             // while there is still text to read
-            while((songList = br.readLine()) != null){
-                System.out.println(songList);
+            while((songInfo = br.readLine()) != null){
+                System.out.println(songInfo);
+                while ((songInfo = br.readLine()) != ""){
+                    ArrayList<String> songList = new ArrayList<String>();
+                }
             }
 
             br.close();         // Close the reader
