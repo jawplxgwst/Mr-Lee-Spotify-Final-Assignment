@@ -13,18 +13,21 @@ public class Main {
     public static void main(String [] args){
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\jzwon\\Desktop\\GitHub Projects\\Mr-Lee-Spotify-Final-Assignment\\src\\Music File.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("src\\Music File.txt"));      // create buffered reader to read in file
 
-            String songList;
+            String songList;        // variable to hold the song information
+
+            // while there is still text to read
             while((songList = br.readLine()) != null){
                 System.out.println(songList);
-                //Song mySong = new Song();
-                //Song mySong = new Song("Secrets", "Hip-Hop", 260, "Starboy", "The Weeknd");
             }
 
             br.close();         // Close the reader
 
+            System.out.print("IT WORKS");
+
         } catch (Exception e) {
+            System.out.println("Error Occurred");
             return;
         }
     }

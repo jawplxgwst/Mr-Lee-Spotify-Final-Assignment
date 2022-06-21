@@ -1,0 +1,18 @@
+Name
+Genre
+Time
+Album
+Artist
+ 
+Titanium (ft. Sia)
+Hip-Hop
+244
+Nothing but the Beat
+David Guetta
+
+The Color Violet
+Hip-Hop
+226
+Alone at Prom
+Tory Lanez
+

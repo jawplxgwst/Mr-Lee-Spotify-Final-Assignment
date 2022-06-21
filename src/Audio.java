@@ -17,7 +17,7 @@ public class Audio {
 
 
         try {
-            File f = new File("C:\\Users\\jzwon\\Desktop\\GitHub Projects\\Mr-Lee-Spotify-Final-Assignment\\src\\Titanium.mp3");
+            File f = new File("src\\Titanium (ft. Sia).mp3");
 
 
             MP3Player player = new MP3Player(f);
