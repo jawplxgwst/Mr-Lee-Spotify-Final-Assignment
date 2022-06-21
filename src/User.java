@@ -79,7 +79,7 @@ public class User {
      */
     public String getBirthday() {return this.birthday;}
 
-    /** mutator methods */
+    /* mutators */
 
     /**
     Description: Sets new username
