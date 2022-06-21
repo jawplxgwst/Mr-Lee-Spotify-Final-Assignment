@@ -121,6 +121,8 @@ public class User {
         }
     }
 
+    /** other methods */
+
     /**
      * change password method
      * @param oldPassword
@@ -140,6 +142,11 @@ public class User {
         }
     }
 
+    /**
+     * change username
+     * @param oldUsername
+     * @param newUsername
+     */
     public void changeUsername(String oldUsername, String newUsername) {
         if (newUsername.equals(oldUsername)) { // if the usernames are the same
             System.out.println("Your new username is the same as the last. \nYour username has not been changed.");
