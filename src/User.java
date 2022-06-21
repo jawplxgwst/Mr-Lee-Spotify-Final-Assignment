@@ -42,7 +42,7 @@ public class User {
         this.birthday = birthday;
     }
 
-    /* accessots */
+    /* accessors */
 
     /**
      * Name: getUsername
