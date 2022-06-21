@@ -60,7 +60,7 @@ public class User {
 
     /**
      * Name: getEmail
-     * Decription: return the email
+     * Description: return the email
      * @return the email
      */
     public String getEmail() {return this.email;}
@@ -83,7 +83,7 @@ public class User {
 
     /**
     Description: Sets new username
-    @param String newUsername
+    @param newUsername
     */
     public void setUsername(String newUsername){
         this.username = newUsername;      
@@ -91,7 +91,7 @@ public class User {
       
     /**
     Description: Sets new password
-    @param String newPassword
+    @param newPassword
     */
     public void setPassword(String newPassword){
         this.password = newPassword;      
@@ -99,7 +99,7 @@ public class User {
 
     /**
     Description: Sets new email 
-    @param String newEmail
+    @param newEmail
     */
     public void setEmail(String newEmail){
         this.email = newEmail;      
@@ -107,7 +107,7 @@ public class User {
 
     /**
     Description: Sets new region
-    @param String newRegion
+    @param newRegion
     */
     public void setRegion(String newRegion){
         this.region = newRegion;      
