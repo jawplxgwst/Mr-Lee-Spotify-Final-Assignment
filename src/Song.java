@@ -130,11 +130,24 @@ public class Song {
      * Description: set the artist of the song
      * @param newArtist new possible artist
      */
-    public void setArtist(String newArtist{
+    public void setArtist(String newArtist){
         if (newArtist.length()>0) {
             this.artist = newArtist;
         }
     }
 
     /* other methods */
+
+    /**
+     Name: toString
+     Description: returns all song attributes
+     @return song attributes (time in seconds)
+     */
+    public String toString() {
+        String attributes;
+
+        attributes = "Name: " + this.name + "\nGenre: " + this.genre + "\nTime: " + this.length + "\nAlbum: " + this.album + "\nArtist: " + this.artist;
+
+        return attributes;
+    }
 }
