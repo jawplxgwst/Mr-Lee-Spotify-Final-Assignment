@@ -17,7 +17,7 @@ public class Audio {
 
 
         try {
-            File f = new File("src\\Titanium (ft. Sia).mp3");
+            File f = new File("src\\Song\\Titanium (ft. Sia).mp3");
 
 
             MP3Player player = new MP3Player(f);
