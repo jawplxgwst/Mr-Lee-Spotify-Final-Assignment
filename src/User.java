@@ -134,11 +134,11 @@ public class User {
                     if (newPassword.equals(newPasswordAgain)) { // if both new password input is the same
                         this.password = newPassword;
                         System.out.println("Your password has been changed.");
-                    } else if {
-                        System.out.println("Your new passwords do not match. \nYour password has not been changed.");
                     } else {
-                    System.out.println("Your new old passwords do not match. \nYour password has not been changed.");
+                        System.out.println("Your new passwords do not match. \nYour password has not been changed.");
                     }
+        } else {
+            System.out.println("Your new old passwords do not match. \nYour password has not been changed.");
         }
     }
 }
