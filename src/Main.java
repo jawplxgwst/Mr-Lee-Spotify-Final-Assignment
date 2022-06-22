@@ -7,7 +7,8 @@
 
 // imported packages
 import java.io.*;
-import java.util.*;
+
+
 
 public class Main {
 
@@ -16,7 +17,7 @@ public class Main {
 
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src\\Titanium ft. (Sia).txt"));      // create buffered reader to read in file
+            BufferedReader br = new BufferedReader(new FileReader("src\\Songs\\Titanium (ft. Sia).txt"));      // create buffered reader to read in file
 
             String[] songInfo = new String[6];        // variable to hold the song information
 
@@ -25,6 +26,7 @@ public class Main {
             }
 
             Song musicPlay = new Song(songInfo[0],songInfo[1],Integer.valueOf(songInfo[2]), songInfo[3],songInfo[4],songInfo[5]);
+            musicPlay.songInteraction(musicPlay);
 
             br.close();         // Close the reader
 

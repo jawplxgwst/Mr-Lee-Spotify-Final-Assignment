@@ -164,7 +164,7 @@ public class Song {
         Scanner sc = new Scanner(System.in);            // add scanner for pause and play prompt
 
         try {
-            File f = new File("src\\Songs\\Screaming.mp3");
+            File f = new File("src\\Songs\\"+testSong.getMp3File());
 
 
             MP3Player player = new MP3Player(f);
@@ -182,6 +182,7 @@ public class Song {
 
                 if (command.equalsIgnoreCase("s")) {
                     player.stop();
+                    System. exit(1);
                 } else if (command.equalsIgnoreCase("p")) {
                     if (player.isPaused()) {
                         player.play();
