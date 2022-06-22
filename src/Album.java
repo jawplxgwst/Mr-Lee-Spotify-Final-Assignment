@@ -20,6 +20,8 @@ public class Album {
    /** number of songs in the album */
    private int songCount;
    
+   private String[] songs;
+   
    //constructors
    
    /** 
@@ -29,8 +31,9 @@ public class Album {
   * @param bank, length, length of the album
   * @param genre, genre of the album
   * @param songCount, number of songs in the album
+  * @param songs, string of song names in the album
   */
-   public Album(String name, int length, String genre, int songCount) {
+   public Album(String name, int length, String genre, int songCount, String[] songs) {
       this.name = name;
       this.length = length;
       this.genre = genre;
@@ -41,6 +44,8 @@ public class Album {
       } else {
          this.songCount = songCount;
       }
+      
+      this.songs = songs;
   }
 
    //accessor methods
@@ -59,6 +64,29 @@ public class Album {
    
    public int getSongCount() {
       return this.songCount;
+   }
+   
+   public String[] getSongs() {
+      return songs;
+   }
+   
+  /**
+   * shuffle method
+   *
+   */
+   public String shuffle() {
+      
+   }
+   
+   /**
+  * Main method
+  * tests the class
+  *
+  */
+   public static void main(String[] args) {
+   
+      
+      
    }
    
 }
