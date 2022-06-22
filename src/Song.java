@@ -157,21 +157,8 @@ public class Song {
     /* other methods */
 
     /**
-     * Name: toMilli
-     * Description: converts the duration to milliseconds
-     * @return duration in milliseconds
-     */
-    public int toMilli() {
-        int milli;
-        milli = this.length*1000;
-
-        return milli;
-    }
-
-    /**
-     * Name
-     * Description
-     * @return
+     * Name: songInteraction
+     * Description: allows user to interact with the mp3 file (play, pause, stop)
      */
     public void songInteraction(Song testSong){
         Scanner sc = new Scanner(System.in);            // add scanner for pause and play prompt
@@ -204,7 +191,7 @@ public class Song {
                 }
             }
 
-            int milliLength = (testSong.getLength()).toMilli();
+            int milliLength = testSong.getLength()*1000;
 
             Thread.sleep(milliLength);         // stops the program after song is finished
 
@@ -284,9 +271,6 @@ public class Song {
         // other methods
         System.out.println();
         System.out.println("OTHER METHODS");    // extra method (only 1)
-
-        System.out.println("Demonstrating toMilli");
-        System.out.println(mySong.toMilli());           // output toMilli
 
         System.out.println("Demonstrating toString()");
         System.out.println(mySong.toString());          // output toString
