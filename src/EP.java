@@ -9,16 +9,16 @@ public class EP extends Album {
    //attributes
    
    /** name of the album */
-   private String name;
-   
+   //private String name;
+  
    /** length of the album in seconds */
-   private int length;
+   //private int length;
    
    /** genre of the album */
-   private String genre;
+   //private String genre;
    
    /** number of songs in the album */
-   private int songCount;
+   //private int songCount;
    
    private String[] songs;
    
