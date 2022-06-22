@@ -7,33 +7,36 @@
 
 // imported packages
 import java.io.*;
-import java.util.*;
+
+
 
 public class Main {
 
     public static void main(String [] args){
 
+
+
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src\\Music File.txt"));      // create buffered reader to read in file
+            BufferedReader br = new BufferedReader(new FileReader("src\\Songs\\The Color Violet.txt"));      // create buffered reader to read in file
 
-            String songInfo;        // variable to hold the song information
+            String[] songInfo = new String[6];        // variable to hold the song information
 
-            // while there is still text to read
-            while((songInfo = br.readLine()) != null){
-                System.out.println(songInfo);
-                while ((songInfo = br.readLine()) != ""){
-                    ArrayList<String> songList = new ArrayList<String>();
-                }
+            for (int i = 0; i<6; i++) {
+                songInfo[i] = br.readLine();
             }
 
-            br.close();         // Close the reader
+            Song musicPlay = new Song(songInfo[0],songInfo[1],Integer.valueOf(songInfo[2]), songInfo[3],songInfo[4],songInfo[5]);
+            musicPlay.songInteraction(musicPlay);
 
-            System.out.print("IT WORKS");       // delete later
+            br.close();         // Close the reader
 
         } catch (Exception e) {
             System.out.println("Error Occurred");
             return;
         }
+
+
+
     }
 }
 
