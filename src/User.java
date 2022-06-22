@@ -95,7 +95,7 @@ public class User {
      * @return subscribed
      */
    public boolean getIsSubscribed() {return this.isSubscribed;}
-
+   
    /**
      * Name: getBankBalance
      * Description: return the user's bank balance
@@ -103,37 +103,9 @@ public class User {
      */
    public double getBankBalance() {return this.bankBalance;}
 
+    
+    
     /* mutators */
-
-    /**
-     * Description: Sets new username
-     * @param newUsername
-     */
-    public void setUsername(String newUsername){
-        if (newUsername.length() > 0) {
-            this.username = newUsername;
-        }
-    }
-      
-    /**
-    Description: Sets new password
-    @param newPassword
-    */
-    public void setPassword(String newPassword) {
-        if (newPassword.length() > 0) {
-            this.password = newPassword;
-        }
-    }
-
-    /**
-    Description: Sets new email 
-    @param newEmail
-    */
-    public void setEmail(String newEmail){
-        if (newEmail.length() > 0) {
-            this.email = newEmail;
-        }
-    }
 
     /**
      * Description: Sets new region
@@ -154,14 +126,14 @@ public class User {
      public void subscribe() {
         if (isSubscribed == true) {
            isSubscribed = true;
-           System.out.println("You are already subscribed");
+           System.out.println("You are already subscribed.");
         } else if (bankBalance < 9.99) {
            isSubscribed = false;
-           System.out.println("You do not have enough money to subscribe");
+           System.out.println("You do not have enough money to subscribe.");
         } else {
            bankBalance -= 9.99;
            isSubscribed = true;
-           System.out.println("You have successfuly subscribed");
+           System.out.println("You have successfuly subscribed.");
         }
      }
      
@@ -174,11 +146,11 @@ public class User {
      */
      public void unsubscribe() {
         isSubscribed = false;
-        System.out.println("You have unsubscribed");
+        System.out.println("You have unsubscribed.");
      }
      
 
-    /** other methods */
+    /** change information methods */
 
     /**
      * change password method
@@ -195,7 +167,7 @@ public class User {
                 System.out.println("Your new passwords do not match. \nYour password has not been changed.");
             }
         } else {
-            System.out.println("Your new old passwords do not match. \nYour password has not been changed.");
+            System.out.println("Your input password does not match. \nYour password has not been changed.");
         }
     }
 
@@ -214,11 +186,39 @@ public class User {
     }
     
     /**
+     * change email 
+     * @param newEmail
+     */
+    public void changeEmail(String newEmail){
+        if ((newEmail.length() > 0) && ((newEmail.contains("@gmail.com")) || (newEmail.contains("@yahoo.com")) || (newEmail.contains("@outlook.com")) || (newEmail.contains("@student.tdsb.on.ca")))) {
+            this.email = newEmail;
+            System.out.println("Your email is now changed.");
+        } else {
+            System.out.println("Sorry the email you have entered is not valid.");
+        }
+    }
+    
+    /**
      * Main class
      * Description: tests the user class
      */
     public static void main(String[] args) {
+        User UserUno = new User ("Herny", "somepassword", "henry62@gmail.com", "Canada", "April 19, 2001", true, 0.88);
         
+        User UserDos = new User ("ChrisP", "anotherpassword", "ChrisP29@yahoo.com", "South Korea", "January 12, 2003", false, 0.01);
+        
+        User UserTres = new User ("James", "randompassword", "James1@gmail.com", "North Korea", "October 17, 2002", false, 10.00);
+        
+        
+        UserUno.changeUsername("Herny", "Henry");
+        
+        UserUno.unsubscribe();
+        
+        UserDos.changePassword("someotherpassword", "specificpassword", "specificpassword");
+        
+        UserTres.subscribe();
+        
+        UserTres.changeEmail("James2@outlook.com");
     }
     
 }
