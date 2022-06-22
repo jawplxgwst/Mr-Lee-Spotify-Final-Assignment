@@ -208,8 +208,7 @@ public class User {
         User UserDos = new User ("ChrisP", "anotherpassword", "ChrisP29@yahoo.com", "South Korea", "January 12, 2003", false, 0.01);
         
         User UserTres = new User ("James", "randompassword", "James1@gmail.com", "North Korea", "October 17, 2002", false, 10.00);
-        
-        
+
         UserUno.changeUsername("Herny", "Henry");
         
         UserUno.unsubscribe();
