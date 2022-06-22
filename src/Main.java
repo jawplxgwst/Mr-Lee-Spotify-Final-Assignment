@@ -17,7 +17,7 @@ public class Main {
 
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src\\Songs\\Titanium (ft. Sia).txt"));      // create buffered reader to read in file
+            BufferedReader br = new BufferedReader(new FileReader("src\\Songs\\The Color Violet.txt"));      // create buffered reader to read in file
 
             String[] songInfo = new String[6];        // variable to hold the song information
 
