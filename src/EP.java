@@ -20,6 +20,9 @@ public class EP extends Album {
    /** number of songs in the album */
    //private int songCount;
    
+   /** number of songs in the EP */
+   private int EPsongCount;
+   
    //constructors
    
    /** 
@@ -28,14 +31,25 @@ public class EP extends Album {
   * @param name, name of the album
   * @param bank, length, length of the album
   * @param genre, genre of the album
-  * @param songs, songs of the album
+  * @param songCount, number of songs in the album
+  * @param EPsongCount, number of songs in the EP
   */
-   public EP(String name, int length, String genre, int songCount) {
+   public EP(String name, int length, String genre, int songCount, int EPsongCount) {
       super(name, length, genre, songCount);
       //this.name = name;
       //this.length = length;
       //this.genre = genre;
       //this.songCount = songCount
+      
+      // instead of using songCount, EPsongCount is a new attribute assigned
+      // EPs cannot have more than 5 songs
+      if (EPsongCount > 5) {
+         this.EPsongCount = 5;
+      } else if (EPsongCount < 1) {
+         this.EPsongCount = 1;
+      } else {
+         this.EPsongCount = EPsongCount;
+      }
    }
 
    //accessor methods
@@ -56,9 +70,13 @@ public class EP extends Album {
       return this.songCount;
    }*/
    
+   public int getEPsongCount() {
+      return this.EPsongCount;
+   }
+   
    public static void main(String[] args) {
         
-      EP ded = new EP("dread", 8000, "pop", 3);
+      EP ded = new EP("dread", 8000, "pop", 10, 3);
         
    }
 }
