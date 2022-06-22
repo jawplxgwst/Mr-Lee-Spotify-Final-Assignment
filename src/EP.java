@@ -2,26 +2,25 @@
  * @author Henry Liu
  * Jun 7, 2022
  * 
- * A class for EPs, which are albums but shorter
+ * A class for Albums
  */
 public class EP extends Album {
    
    //attributes
    
    /** name of the album */
-   //private String name;
+   private String name;
    
    /** length of the album in seconds */
-   //private int length;
+   private int length;
    
    /** genre of the album */
-   //private String genre;
+   private String genre;
    
    /** number of songs in the album */
-   //private int songCount;
+   private int songCount;
    
-   /** number of songs in the EP */
-   private int EPsongCount;
+   private String[] songs;
    
    //constructors
    
@@ -32,51 +31,62 @@ public class EP extends Album {
   * @param bank, length, length of the album
   * @param genre, genre of the album
   * @param songCount, number of songs in the album
-  * @param EPsongCount, number of songs in the EP
+  * @param songs, string of song names in the album
   */
-   public EP(String name, int length, String genre, int songCount, int EPsongCount) {
-      super(name, length, genre, songCount);
-      //this.name = name;
-      //this.length = length;
-      //this.genre = genre;
-      //this.songCount = songCount
+   public Album(String name, int length, String genre, int songCount, String[] songs) {
+      this.name = name;
+      this.length = length;
+      this.genre = genre;
       
-      // instead of using songCount, EPsongCount is a new attribute assigned
-      // EPs cannot have more than 5 songs
-      if (EPsongCount > 5) {
-         this.EPsongCount = 5;
-      } else if (EPsongCount < 1) {
-         this.EPsongCount = 1;
+      // an album must have minimum 6 songs
+      if (songCount < 6) {
+         this.songCount = 6;
       } else {
-         this.EPsongCount = EPsongCount;
+         this.songCount = songCount;
       }
-   }
+      
+      this.songs = songs;
+  }
 
    //accessor methods
 
- /*public String getName() {
+   public String getName() {
       return this.name;
-   }*/
+   }
    
- /*public int getLength() {
+   public int getLength() {
       return this.length;
-   }*/
+   }
    
- /*public String getGenre() {
+   public String getGenre() {
       return this.genre;
-   }*/
+   }
    
- /*public String getSongCount() {
+   public int getSongCount() {
       return this.songCount;
-   }*/
-   
-   public int getEPsongCount() {
-      return this.EPsongCount;
    }
    
+   public String[] getSongs() {
+      return songs;
+   }
+   
+  /**
+   * shuffle method
+   *
+   */
+   public String shuffle() {
+      
+   }
+   
+   /**
+  * Main method
+  * tests the class
+  *
+  */
    public static void main(String[] args) {
-        
-      EP ded = new EP("dread", 8000, "pop", 10, 3);
-        
+   
+      
+      
    }
+   
 }
