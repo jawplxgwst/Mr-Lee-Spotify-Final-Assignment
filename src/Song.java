@@ -1,9 +1,15 @@
+
 /**
  * @author James Wong
  * Jun 7, 2022
  *
  * A class for Spotify
  */
+
+// Imported Packages
+import jaco.mp3.player.MP3Player;
+import java.io.File;
+import java.util.Scanner;
 
 public class Song {
 
@@ -16,13 +22,16 @@ public class Song {
     private String genre;
 
     /** time of the song in second */
-    private int length;
+    private Integer length;
 
     /** album of the song */
     private String album;
 
     /** artist of the song */
     private String artist;
+
+    /** mp3 of the song */
+    private String mp3File;
 
     /* constructor */
 
@@ -34,13 +43,15 @@ public class Song {
      * @param length the length of the song in seconds
      * @param album the album the song is from
      * @param artist the artist of the song
+     * @param mp3File the mp3 of the song
      */
-    public Song(String name, String genre, int length, String album, String artist) {
+    public Song(String name, String genre, Integer length, String album, String artist, String mp3File) {
         this.name = name;
         this.genre = genre;
         this.length = length;
         this.album = album;
         this.artist = artist;
+        this.mp3File = mp3File;
     }
 
     /* accessors */
@@ -64,25 +75,32 @@ public class Song {
      * Description: return the length of the song in seconds
      * @return the time of the song in length
      */
-    public int getLength() {return this.length;}
+    public Integer getLength() {return this.length;}
 
     /**
-     * Name: album
+     * Name: getAlbum
      * Description: return the album of the song
      * @return the album of the song
      */
     public String getAlbum() {return this.album;}
 
     /**
-     * Name: artist
+     * Name: getArtist
      * Description: return the artist of the song
      * @return the artist of the song
      */
     public String getArtist() {return this.artist;}
 
+    /**
+     * Name: getMp3File
+     * Description: return the mp3 file of the song
+     * @return the mp3File of the song
+     */
+    public String getMp3File() {return this.mp3File;}
+
     /* mutators */
     /**
-     * Name: name
+     * Name: setName
      * Description: set the name of the song
      * @param newName new possible name
      */
@@ -93,7 +111,7 @@ public class Song {
     }
 
     /**
-     * Name: genre
+     * Name: setGenre
      * Description: set the genre of the song
      * @param newGenre new possible genre
      */
@@ -104,18 +122,18 @@ public class Song {
     }
 
     /**
-     * Name: length
+     * Name: setLength
      * Description: set the length of the song in seconds
      * @param newLength new possible length
      */
-    public void setLength(int newLength) {
+    public void setLength(Integer newLength) {
         if (newLength>0) {
             this.length = newLength;
         }
     }
 
     /**
-     * Name: album
+     * Name: setAlbum
      * Description: set the album of the song
      * @param newAlbum new possible album
      */
@@ -126,7 +144,7 @@ public class Song {
     }
 
     /**
-     * Name: artist
+     * Name: setArtist
      * Description: set the artist of the song
      * @param newArtist new possible artist
      */
@@ -139,6 +157,64 @@ public class Song {
     /* other methods */
 
     /**
+     * Name: toMilli
+     * Description: converts the duration to milliseconds
+     * @return duration in milliseconds
+     */
+    public int toMilli() {
+        int milli;
+        milli = this.length*1000;
+
+        return milli;
+    }
+
+    /**
+     * Name
+     * Description
+     * @return
+     */
+    public void songInteraction(Song testSong){
+        Scanner sc = new Scanner(System.in);            // add scanner for pause and play prompt
+
+        try {
+            File f = new File("src\\Songs\\Screaming.mp3");
+
+
+            MP3Player player = new MP3Player(f);
+            player.play();
+
+
+            System.out.println("INSTRUCTIONS");
+            System.out.println("p to play/pause");
+            System.out.println("s to stop the music");
+            System.out.println();
+
+
+            while (!player.isStopped()) {
+                String command = sc.nextLine();
+
+                if (command.equalsIgnoreCase("s")) {
+                    player.stop();
+                } else if (command.equalsIgnoreCase("p")) {
+                    if (player.isPaused()) {
+                        player.play();
+                    } else {
+                        player.pause();
+                    }
+                }
+            }
+
+            int milliLength = (testSong.getLength()).toMilli();
+
+            Thread.sleep(milliLength);         // stops the program after song is finished
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    /**
      Name: toString
      Description: returns all song attributes
      @return song attributes (time in seconds)
@@ -146,7 +222,7 @@ public class Song {
     public String toString() {
         String attributes;
 
-        attributes = "Name: " + this.name + "\nGenre: " + this.genre + "\nTime: " + this.length + "\nAlbum: " + this.album + "\nArtist: " + this.artist;
+        attributes = "Name: " + this.name + "\nGenre: " + this.genre + "\nTime: " + this.length + "\nAlbum: " + this.album + "\nArtist: " + this.artist + "\nMp3: " + this.mp3File;
 
         return attributes;
     }
@@ -158,7 +234,7 @@ public class Song {
     public static void main(String[] args) {
         // constructor
         // String title, int totalTime, String artist, String album, String genre
-        Song mySong = new Song("Secrets", "Hip-Hop", 260, "Starboy", "The Weeknd");
+        Song mySong = new Song("Titanium (ft. Sia)", "Hip-Hop", 244, "Nothing but the Beat", "David Guetta", "Titanium (ft.Sia).mp3");
 
         // accessors
         System.out.println();
@@ -169,6 +245,7 @@ public class Song {
         System.out.println("Time in seconds: " + mySong.getLength());
         System.out.println("Album: " + mySong.getAlbum());
         System.out.println("Artist: " + mySong.getArtist());
+        System.out.println("Mp3: " + mySong.getMp3File());
 
         // mutators
         System.out.println();
@@ -177,39 +254,42 @@ public class Song {
         System.out.println("catching if the name is less then 1 character");
         mySong.setName("");   // invalid
         System.out.println(mySong.getName());
-        mySong.setName("Chanel"); // valid
+        mySong.setName("The Color Violet"); // valid
         System.out.println(mySong.getName());
 
         System.out.println("catching if the genre is less then 1 character");
         mySong.setGenre("");   // invalid
         System.out.println(mySong.getGenre());
-        mySong.setGenre("Alternative"); // valid
+        mySong.setGenre("Hip-Hop"); // valid
         System.out.println(mySong.getGenre());
 
         System.out.println("catching if the time is negative");
         mySong.setLength(-1);   // invalid
         System.out.println(mySong.getLength());
-        mySong.setLength(360); // valid
+        mySong.setLength(226); // valid
         System.out.println(mySong.getLength());
 
         System.out.println("catching if the album is less then 1 character");
         mySong.setAlbum("");   // invalid
         System.out.println(mySong.getAlbum());
-        mySong.setAlbum("Blonde"); // valid
+        mySong.setAlbum("Alone at Prom"); // valid
         System.out.println(mySong.getAlbum());
 
         System.out.println("catching if the artist is less then 1 character");
         mySong.setArtist("");   // invalid
         System.out.println(mySong.getArtist());
-        mySong.setArtist("Frank Ocean"); // valid
+        mySong.setArtist("Tory Lanez"); // valid
         System.out.println(mySong.getArtist());
 
         // other methods
         System.out.println();
         System.out.println("OTHER METHODS");    // extra method (only 1)
 
+        System.out.println("Demonstrating toMilli");
+        System.out.println(mySong.toMilli());           // output toMilli
+
         System.out.println("Demonstrating toString()");
-        System.out.println(mySong.toString()); // output toString
+        System.out.println(mySong.toString());          // output toString
     }
 }
 

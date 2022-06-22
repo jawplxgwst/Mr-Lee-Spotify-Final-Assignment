@@ -15,32 +15,40 @@ public class Audio {
         Scanner sc = new Scanner(System.in);            // add scanner for pause and play prompt
 
 
+        public void songInteraction(Song testSong){
 
-        try {
-            File f = new File("src\\Song\\Titanium (ft. Sia).mp3");
-
-
-            MP3Player player = new MP3Player(f);
-            player.play();
+            try {
+                File f = new File("src\\Songs\\Screaming.mp3");
 
 
-            System.out.println("INSTRUCTIONS");
-            System.out.println("p to play/pause");
-            System.out.println("s to stop the music");
-            System.out.println();
-            String command = sc.nextLine();
+                MP3Player player = new MP3Player(f);
+                player.play();
 
-            if (command.equalsIgnoreCase("s")) {
-                player.isStopped();
+
+                System.out.println("INSTRUCTIONS");
+                System.out.println("p to play/pause");
+                System.out.println("s to stop the music");
+                System.out.println();
+
+
+                while (!player.isStopped()) {
+                    String command = sc.nextLine();
+
+                    if (command.equalsIgnoreCase("s")) {
+                        player.stop();
+                    } else if (command.equalsIgnoreCase("p")) {
+                        if (player.isPaused()) {
+                            player.play();
+                        } else {
+                            player.pause();
+                        }
+                    }
+                }
+                Thread.sleep();         // stops the program after song is finished
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-
-            while (!player.isStopped()) {
-                // System.out.println(4);
-                Thread.sleep(5000);
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }
 }
