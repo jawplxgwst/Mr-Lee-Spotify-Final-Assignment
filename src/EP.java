@@ -31,11 +31,12 @@ public class EP extends Album {
   * @param songs, songs of the album
   */
    public EP(String name, int length, String genre, int songCount) {
+      super(name, length, genre, songCount);
       //this.name = name;
       //this.length = length;
       //this.genre = genre;
       //this.songCount = songCount
-  }
+   }
 
    //accessor methods
 
@@ -57,7 +58,7 @@ public class EP extends Album {
    
    public static void main(String[] args) {
         
-      EP ded = new EP("dread", 8000, pop, 3);
+      EP ded = new EP("dread", 8000, "pop", 3);
         
    }
 }
