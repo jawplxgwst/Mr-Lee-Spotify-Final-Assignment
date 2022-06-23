@@ -22,6 +22,8 @@ public class EP extends Album {
    
    /** number of songs in the album */
    //private int songCount;
+   //_____________________________
+   //note: this attribute is useless in the EP class
    
    /** array of song names from the album */
    //private String[] songs;

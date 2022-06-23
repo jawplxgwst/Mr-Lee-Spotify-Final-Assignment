@@ -24,6 +24,7 @@ public class Album {
    private int songCount;
    
    /** array of song names from the album */
+   //note: this attribute is public in order for the method in the EP class to access it
    public String[] songs;
    
    //constructors
