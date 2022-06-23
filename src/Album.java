@@ -4,6 +4,9 @@
  * 
  * A class for Albums
  */
+ 
+import java.util.*;
+
 public class Album {
    
    //attributes
@@ -20,7 +23,8 @@ public class Album {
    /** number of songs in the album */
    private int songCount;
    
-   private String[] songs;
+   /** array of song names from the album */
+   public String[] songs;
    
    //constructors
    
@@ -72,10 +76,19 @@ public class Album {
    
   /**
    * shuffle method
+   * returns the list of songs but in a new order
    *
    */
    public String shuffle() {
+      ArrayList<String> songList = new ArrayList<String>();
       
+      for (int i = 0; i < songCount; i++) {
+			songList.add(songs[i]);
+		}
+      
+      Collections.shuffle(songList);
+      
+      return songList + "";
    }
    
    /**
@@ -85,7 +98,14 @@ public class Album {
   */
    public static void main(String[] args) {
    
+      //using Metallica's Master of Puppets as an example
+      String[] MasterofPuppets = {"Battery", "Master of Puppets", "The Thing That Should Not Be", "Welcome Home (sanitarium)", "Disposable Heroes", "Leper Messiah", "Orion", "Damage, Inc."}; 
       
+      //imo Metallica's 4th best album to be honest
+      Album MetallicasBestAlbum = new Album("Master of Puppets", 3240, "Metal", 8, MasterofPuppets);
+      
+      //printing out the new shuffled album list
+      System.out.println(MetallicasBestAlbum.shuffle());
       
    }
    

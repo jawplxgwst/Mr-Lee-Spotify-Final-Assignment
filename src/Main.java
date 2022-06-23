@@ -14,8 +14,6 @@ public class Main {
 
     public static void main(String [] args){
 
-
-
         try {
             BufferedReader br = new BufferedReader(new FileReader("src\\Songs\\The Color Violet.txt"));      // create buffered reader to read in file
 
