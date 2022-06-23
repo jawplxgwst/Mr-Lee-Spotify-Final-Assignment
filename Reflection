@@ -1,0 +1,11 @@
+The most challenging part of the program was working on the mp3 player, but after going through multiple youtube videos and articles, we finally did it. 
+We also learned we should put a file directory for the mp3 file, and some methods only work with .wav files
+We never used strings for attributes before, but after learning how, we figured out how useful they can be instead of having multiple attributes that are pretty much the same.
+Managing the project was relatively successful, our communication was good, we chatted and did voice chats on discord, sometimes even very late. 
+We assigned what we each had to do and got along while doing it.
+However, our time management was not the best, as James joined the group a bit late and we had to rush everything in the end.
+
+The problems we experienced was programming the mp3 file, which we had never done before. However, with enougb practice, we did it successfully.
+To do so, we all had to research what we had to do, giving each other advice, etc. 
+Henry did not have intellij, and therefore could not help much with the mp3 file as he cannot run the program, which also was a big barrier. 
+When James finally got the mp3 file to play, he did not know how to pause it as there was no pause method shown in the article, and therefore, he had to find a completely new article. 
