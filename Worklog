@@ -1,0 +1,60 @@
+Spotify class work log
+
+Music player with menu and different genres
+Able to select different songs and artists based on genre
+
+06/05/22
+Things done: Create idea and proposal
+Things to do: Start writing the code
+
+06/06/22 
+Things done: Created the github and shared it
+Things to do: Start writing the program
+
+06/07/22
+Things done: Started writing the code 
+Things to do: Think of all the attributes and methods involved
+ 
+06/08/22
+Things done: Started working on User (Henry/Chris)
+Things to do: Add all the attributes needed
+ 
+06/09/22
+Things done: Created Profile class (Henry)
+Things to do: Add the attributes
+
+06/10/22
+Things done: Started working on the recommendation method for Profile (Henry)
+Things to do: Continue working on the recommendation method
+
+06/13/22
+Things done: Created the attributes for the Profile class, completed more attributes for user class (Henry)
+Things to do: Continue working on both user and profile class
+
+06/14/22
+Things done: Started creating the song class, the most important class (James)
+Things to do: Finish up writing the attributes and create a method to play mp3 files
+
+06/15/22
+Things done: Assigned James the song class, added some variables to the song class
+Things to do: Add more to the song class
+
+06/16/22
+Things done: Finished the Profile class (Henry)
+Things to do: Test the class to see if it works
+
+06/17/22
+Things done: Made mp3 player method (James)
+Things to do: Add more attributes to the class and try to pause the song
+
+06/20/22
+Things done: Finished the user class (Henry Chris)
+Things to do: Add more classes
+
+06/21/22
+Things done: Created Album and EP class, added attributes (Henry)
+Things to do: Add shuffle method to both classes
+
+06/21/22
+Things done: Created shuffle method successfully for both classes
+Things to do: Whole program is complete
